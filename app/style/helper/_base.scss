@@ -1,0 +1,17 @@
+
+@mixin media($break: 600px) {
+  @media only screen and (max-width: $break){
+    @content;
+  }
+}
+
+#header{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+#sections{
+  margin-top: 60px;
+}

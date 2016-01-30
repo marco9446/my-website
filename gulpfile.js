@@ -58,7 +58,8 @@ gulp.task('sass', function () {
 // server
 gulp.task('serve', ['react','sass'], function() {
   browserSync.init({
-      server: "./app"
+      server: "./app",
+      notify: false
   });
   gulp.watch("app/style/**/*.scss", ['sass']);
   gulp.watch("app/components/**/*.jsx", ['react']);

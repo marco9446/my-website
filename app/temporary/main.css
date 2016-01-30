@@ -352,3 +352,106 @@ table {
 td,
 th {
   padding: 0; }
+
+#header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0; }
+
+#sections {
+  margin-top: 60px; }
+
+#header .container {
+  min-height: 60px;
+  width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background: #334055;
+  box-sizing: border-box;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 5px 20px;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  #header .container.is-open {
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    -ms-grid-row-align: flex-start;
+    align-items: flex-start; }
+  @media only screen and (max-width: 600px) {
+    #header .container {
+      padding: 10px 20px; } }
+#header .logo {
+  -webkit-order: -1;
+  -ms-flex-order: -1;
+  order: -1;
+  box-sizing: border-box;
+  background: white;
+  width: 40px;
+  height: 40px;
+  padding: 6px; }
+#header .links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  font-size: 1.4em; }
+  @media only screen and (max-width: 600px) {
+    #header .links {
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      text-align: center; } }
+  @media only screen and (max-width: 600px) {
+    #header .links li {
+      margin: 10px 0; } }
+  #header .links li > a {
+    text-decoration: none;
+    padding: 1em;
+    color: white; }
+  #header .links li:hover {
+    background: #2f3b4f; }
+#header .toggle {
+  display: none;
+  width: 40px;
+  height: 40px;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  -ms-grid-row-align: center;
+  align-items: center;
+  cursor: pointer; }
+  #header .toggle span, #header .toggle span:before, #header .toggle span:after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: white;
+    position: relative; }
+  #header .toggle span:before {
+    top: 15px; }
+  #header .toggle span::after {
+    bottom: 17px; }
+  @media only screen and (max-width: 600px) {
+    #header .toggle {
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex; } }
+#header .is-open {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+@media only screen and (max-width: 600px) {
+  #header .is-closed {
+    display: none; } }
