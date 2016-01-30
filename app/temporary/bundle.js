@@ -48,11 +48,14 @@
 
 	var React = __webpack_require__(1),
 	    ReactDOM = __webpack_require__(158),
-	    Example = __webpack_require__(159);
+	    Sections = __webpack_require__(159),
+	    Header = __webpack_require__(161);
 
-	var header = React.createElement(Example, null);
+	var header = React.createElement(Header, null);
+	var sections = React.createElement(Sections, null);
 
 	ReactDOM.render(header, document.getElementById('header'));
+	ReactDOM.render(sections, document.getElementById('sections'));
 
 /***/ },
 /* 1 */
@@ -19656,7 +19659,86 @@
 	'use strict';
 
 	var React = __webpack_require__(1),
-	    classNames = __webpack_require__(160);
+	    About = __webpack_require__(160);
+
+	var sectionEntry = React.createClass({
+	  displayName: 'sectionEntry',
+
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      null,
+	      React.createElement(About, null)
+	    );
+	  }
+
+	});
+
+	module.exports = sectionEntry;
+
+/***/ },
+/* 160 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+
+	var About = React.createClass({
+	  displayName: 'About',
+
+	  render: function render() {
+	    return React.createElement(
+	      'section',
+	      { className: 'container' },
+	      React.createElement(
+	        'div',
+	        { className: 'wrapper' },
+	        React.createElement(
+	          'div',
+	          { className: 'helper' },
+	          React.createElement(
+	            'div',
+	            { className: 'screen' },
+	            React.createElement(
+	              'div',
+	              { className: 'innerScreen' },
+	              React.createElement(
+	                'div',
+	                { className: 'terminalWindow' },
+	                React.createElement(
+	                  'div',
+	                  { className: 'icons' },
+	                  React.createElement('div', { className: 'threeIcn red' }),
+	                  React.createElement('div', { className: 'threeIcn yellow' }),
+	                  React.createElement('div', { className: 'threeIcn green' })
+	                ),
+	                React.createElement('div', { className: 'commands' })
+	              )
+	            )
+	          ),
+	          React.createElement(
+	            'div',
+	            { className: 'base' },
+	            React.createElement('div', { className: 'hole' })
+	          )
+	        )
+	      )
+	    );
+	  }
+
+	});
+
+	module.exports = About;
+
+/***/ },
+/* 161 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1),
+	    classNames = __webpack_require__(162);
 
 	var Header = React.createClass({
 	  displayName: 'Header',
@@ -19742,7 +19824,7 @@
 	module.exports = Header;
 
 /***/ },
-/* 160 */
+/* 162 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!

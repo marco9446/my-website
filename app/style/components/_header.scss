@@ -1,7 +1,7 @@
-$header-color: #334055;
+$header-color: #4C5364;
 
 #header{
-
+  // position: relative;
   .container{
     min-height: 60px;
     width: 100%;
@@ -22,9 +22,10 @@ $header-color: #334055;
   }
 
   .logo{
+    border-radius: 5px;
     order: -1;
     box-sizing: border-box;
-    background: white;
+    background: transparent;
     width: 40px;
     height: 40px;
     padding: 6px;

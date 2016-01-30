@@ -4,6 +4,7 @@
  * 2. Prevent iOS and IE text size adjust after device orientation change,
  *    without disabling user zoom.
  */
+@import url(https://fonts.googleapis.com/css?family=Roboto);
 html {
   font-family: sans-serif;
   /* 1 */
@@ -353,14 +354,29 @@ td,
 th {
   padding: 0; }
 
+body {
+  font-family: 'Roboto', sans-serif; }
+
 #header {
   position: fixed;
   top: 0;
   right: 0;
-  left: 0; }
+  left: 0;
+  z-index: 20; }
 
 #sections {
-  margin-top: 60px; }
+  margin-top: 60px;
+  position: relative;
+  z-index: 0; }
+
+.red {
+  background: #C23824; }
+
+.yellow {
+  background: #F2C500; }
+
+.green {
+  background: #1AAF5D; }
 
 #header .container {
   min-height: 60px;
@@ -368,7 +384,7 @@ th {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  background: #334055;
+  background: #4C5364;
   box-sizing: border-box;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -386,11 +402,12 @@ th {
     #header .container {
       padding: 10px 20px; } }
 #header .logo {
+  border-radius: 5px;
   -webkit-order: -1;
   -ms-flex-order: -1;
   order: -1;
   box-sizing: border-box;
-  background: white;
+  background: transparent;
   width: 40px;
   height: 40px;
   padding: 6px; }
@@ -422,7 +439,7 @@ th {
     padding: 1em;
     color: white; }
   #header .links li:hover {
-    background: #2f3b4f; }
+    background: #484e5e; }
 #header .toggle {
   display: none;
   width: 40px;
@@ -455,3 +472,85 @@ th {
 @media only screen and (max-width: 600px) {
   #header .is-closed {
     display: none; } }
+
+#sections .container {
+  box-sizing: border-box;
+  padding: 30px 10px;
+  width: 100%;
+  background: #C26868; }
+#sections .wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative; }
+#sections .helper {
+  width: 100%; }
+#sections .screen {
+  position: relative;
+  margin: 0 auto;
+  border-radius: 20px 20px 0 0;
+  background: #33485E;
+  width: 77%;
+  padding-bottom: 43.6%; }
+  @media only screen and (max-width: 600px) {
+    #sections .screen {
+      width: 90%;
+      padding-bottom: 60%; } }
+#sections .base {
+  background: #D7D7D7;
+  margin: 0 auto;
+  width: 90%;
+  padding-bottom: 3%;
+  border-radius: 0 0 10px 10px;
+  position: relative; }
+  @media only screen and (max-width: 600px) {
+    #sections .base {
+      width: 100%; } }
+  #sections .base .hole {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    width: 10%;
+    height: 40%;
+    background: white;
+    border-radius: 0 0 10px 10px; }
+#sections .innerScreen {
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  left: 15px;
+  right: 15px;
+  background: #1AAF5C; }
+  @media only screen and (max-width: 600px) {
+    #sections .innerScreen {
+      top: 15px;
+      bottom: 15px;
+      left: 10px;
+      right: 10px; } }
+#sections .terminalWindow {
+  border-radius: 5px;
+  margin: 2% auto;
+  color: white;
+  width: 90%;
+  height: 90%;
+  background: #2A3D4F; }
+  @media only screen and (max-width: 600px) {
+    #sections .terminalWindow {
+      height: 92%; } }
+  #sections .terminalWindow .icons {
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+    height: 5%;
+    background: #D7D7D7; }
+  #sections .terminalWindow .threeIcn {
+    margin-top: 0.5%;
+    float: left;
+    width: 2%;
+    border-radius: 50%;
+    height: 62.5%;
+    margin-left: 10px; }
+  #sections .terminalWindow .commands {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 2%; }

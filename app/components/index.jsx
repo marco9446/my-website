@@ -1,9 +1,12 @@
 var React = require('react'),
     ReactDOM = require('react-dom'),
-    Example = require('./header.jsx');
+    Sections = require('./sectionsEntry.jsx'),
+    Header = require('./header.jsx');
 
 
-const header = (<Example/>);
+const header = (<Header/>);
+const sections = (<Sections/>);
 
 
 ReactDOM.render(header, document.getElementById('header'));
+ReactDOM.render(sections, document.getElementById('sections'));
