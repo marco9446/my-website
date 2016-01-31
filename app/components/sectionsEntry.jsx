@@ -1,4 +1,6 @@
 var React = require('react'),
+  Contacts = require('./contacts.jsx'),
+  Portfolio = require('./portfolio.jsx'),
   About = require('./about.jsx');
 
 var sectionEntry = React.createClass({
@@ -7,6 +9,8 @@ var sectionEntry = React.createClass({
     return (
       <div>
         <About></About>
+        <Portfolio></Portfolio>
+        <Contacts></Contacts>
       </div>
     );
   }

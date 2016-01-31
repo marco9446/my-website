@@ -1,0 +1,49 @@
+#portfolio{
+  padding: 10px 10px 30px 10px;
+  background: $portfolio-background;
+  .wrapper{
+    margin: auto;
+    text-align: center;
+    // max-width: 900px;
+  }
+  .projects{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    .project{
+      margin: 0 10px 20px 10px;
+      text-align: left;
+      // height: 260px;
+      .overlayContainer{
+        cursor: pointer;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        // border: 2px dotted red;
+      }
+
+      .overlay{
+        position: absolute;
+        width: 100%;
+        height: calc(100% - 4px);
+        background: #F33446;
+        opacity: 0;
+        transition: opacity 300ms ease-in-out;
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        >img{
+          width: 100px;
+          height: 100px;
+        }
+      }
+      .overlay:hover{
+        opacity: 0.6;
+      }
+      img{
+        width: 340px;
+        height: 190px;
+      }
+    }
+  }
+}

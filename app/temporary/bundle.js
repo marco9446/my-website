@@ -49,7 +49,7 @@
 	var React = __webpack_require__(1),
 	    ReactDOM = __webpack_require__(158),
 	    Sections = __webpack_require__(159),
-	    Header = __webpack_require__(161);
+	    Header = __webpack_require__(164);
 
 	var header = React.createElement(Header, null);
 	var sections = React.createElement(Sections, null);
@@ -19659,7 +19659,9 @@
 	'use strict';
 
 	var React = __webpack_require__(1),
-	    About = __webpack_require__(160);
+	    Contacts = __webpack_require__(160),
+	    Portfolio = __webpack_require__(161),
+	    About = __webpack_require__(163);
 
 	var sectionEntry = React.createClass({
 	  displayName: 'sectionEntry',
@@ -19668,7 +19670,9 @@
 	    return React.createElement(
 	      'div',
 	      null,
-	      React.createElement(About, null)
+	      React.createElement(About, null),
+	      React.createElement(Portfolio, null),
+	      React.createElement(Contacts, null)
 	    );
 	  }
 
@@ -19684,13 +19688,140 @@
 
 	var React = __webpack_require__(1);
 
+	var Contacts = React.createClass({
+	  displayName: 'Contacts',
+
+	  render: function render() {
+	    return React.createElement(
+	      'section',
+	      { id: 'contacts' },
+	      React.createElement(
+	        'div',
+	        { className: 'wrapper' },
+	        React.createElement(
+	          'h1',
+	          null,
+	          'CONTACTS'
+	        ),
+	        React.createElement(
+	          'div',
+	          { className: 'links-Container' },
+	          React.createElement(
+	            'a',
+	            { href: 'https://plus.google.com/+marcoravazzini', className: 'contacts-link google' },
+	            React.createElement('img', { src: '../images/google1.svg' })
+	          ),
+	          React.createElement(
+	            'a',
+	            { href: 'mailto:marco9446@gmail.com', className: 'contacts-link gmail' },
+	            React.createElement('img', { src: '../images/mail1.svg' })
+	          ),
+	          React.createElement(
+	            'a',
+	            { href: 'https://github.com/marco9446', className: 'contacts-link git' },
+	            React.createElement('img', { src: '../images/github1.svg' })
+	          ),
+	          React.createElement(
+	            'a',
+	            { href: 'https://www.linkedin.com/in/marco-ravazzini-996b7a113?trk=nav_responsive_tab_profile', className: 'contacts-link linkedin' },
+	            React.createElement('img', { src: '../images/linkedin1.svg' })
+	          )
+	        )
+	      )
+	    );
+	  }
+
+	});
+
+	module.exports = Contacts;
+
+/***/ },
+/* 161 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+	var projectsJson = __webpack_require__(162);
+
+	var Portfolio = React.createClass({
+	  displayName: 'Portfolio',
+
+	  render: function render() {
+	    // to add new projects modyfy projects.json
+	    var renderPr = [];
+	    for (var i = 0; i < projectsJson.length; i++) {
+	      renderPr.push(React.createElement(
+	        'div',
+	        { className: 'project', key: i },
+	        React.createElement(
+	          'h2',
+	          null,
+	          projectsJson[i].title
+	        ),
+	        React.createElement(
+	          'div',
+	          { className: 'overlayContainer' },
+	          React.createElement(
+	            'div',
+	            { className: 'overlay' },
+	            React.createElement('img', { src: '../images/loupe19.svg' })
+	          ),
+	          React.createElement('img', { src: projectsJson[i].image })
+	        )
+	      ));
+	    }
+	    return React.createElement(
+	      'section',
+	      { id: 'portfolio' },
+	      React.createElement(
+	        'div',
+	        { className: 'wrapper' },
+	        React.createElement(
+	          'h1',
+	          null,
+	          'PORTFOLIO'
+	        ),
+	        React.createElement(
+	          'div',
+	          { className: 'projects' },
+	          renderPr
+	        )
+	      )
+	    );
+	  }
+
+	});
+
+	module.exports = Portfolio;
+
+/***/ },
+/* 162 */
+/***/ function(module, exports) {
+
+	module.exports = [
+		{
+			"title": "cose",
+			"image": "http://www.placehold.it/800x600",
+			"description": "bella descrizione"
+		}
+	];
+
+/***/ },
+/* 163 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+
 	var About = React.createClass({
 	  displayName: 'About',
 
 	  render: function render() {
 	    return React.createElement(
 	      'section',
-	      { className: 'container' },
+	      { id: 'about' },
 	      React.createElement(
 	        'div',
 	        { className: 'wrapper' },
@@ -19732,13 +19863,13 @@
 	module.exports = About;
 
 /***/ },
-/* 161 */
+/* 164 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var React = __webpack_require__(1),
-	    classNames = __webpack_require__(162);
+	    classNames = __webpack_require__(165);
 
 	var Header = React.createClass({
 	  displayName: 'Header',
@@ -19824,7 +19955,7 @@
 	module.exports = Header;
 
 /***/ },
-/* 162 */
+/* 165 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!

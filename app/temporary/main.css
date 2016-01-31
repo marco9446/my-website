@@ -393,14 +393,14 @@ body {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center; }
-  #header .container.is-open {
-    -webkit-align-items: flex-start;
-    -ms-flex-align: start;
-    -ms-grid-row-align: flex-start;
-    align-items: flex-start; }
   @media only screen and (max-width: 600px) {
     #header .container {
-      padding: 10px 20px; } }
+      padding: 10px 20px; }
+      #header .container.is-open {
+        -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+        -ms-grid-row-align: flex-start;
+        align-items: flex-start; } }
 #header .logo {
   border-radius: 5px;
   -webkit-order: -1;
@@ -473,84 +473,181 @@ body {
   #header .is-closed {
     display: none; } }
 
-#sections .container {
+#portfolio {
+  padding: 10px 10px 30px 10px;
+  background: yellow; }
+  #portfolio .wrapper {
+    margin: auto;
+    text-align: center; }
+  #portfolio .projects {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+    #portfolio .projects .project {
+      margin: 0 10px 20px 10px;
+      text-align: left; }
+      #portfolio .projects .project .overlayContainer {
+        cursor: pointer;
+        position: relative;
+        width: 100%;
+        height: 100%; }
+      #portfolio .projects .project .overlay {
+        position: absolute;
+        width: 100%;
+        height: calc(100% - 4px);
+        background: #F33446;
+        opacity: 0;
+        transition: opacity 300ms ease-in-out;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center; }
+        #portfolio .projects .project .overlay > img {
+          width: 100px;
+          height: 100px; }
+      #portfolio .projects .project .overlay:hover {
+        opacity: 0.6; }
+      #portfolio .projects .project img {
+        width: 340px;
+        height: 190px; }
+
+#contacts {
   box-sizing: border-box;
-  padding: 30px 10px;
+  background: lightblue;
+  padding: 10px; }
+  #contacts .wrapper {
+    margin: auto;
+    max-width: 700px;
+    text-align: center;
+    padding-bottom: 20px; }
+  #contacts .links-Container {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+  #contacts .contacts-link {
+    margin-bottom: 15px;
+    text-decoration: none;
+    display: block;
+    width: 96px;
+    height: 96px;
+    font-size: 0;
+    overflow: hidden;
+    position: relative; }
+    #contacts .contacts-link > img {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px; }
+  #contacts .google {
+    background: #D34836; }
+  #contacts .git {
+    background: #333333; }
+    #contacts .git > .gitImg {
+      fill: #94d31b; }
+  #contacts .gmail {
+    background: #EE802F; }
+  #contacts .linkedin {
+    background: #2C6183; }
+
+#about {
+  box-sizing: border-box;
+  padding: 40px 10px;
   width: 100%;
   background: #C26868; }
-#sections .wrapper {
-  max-width: 900px;
-  margin: 0 auto;
-  position: relative; }
-#sections .helper {
-  width: 100%; }
-#sections .screen {
-  position: relative;
-  margin: 0 auto;
-  border-radius: 20px 20px 0 0;
-  background: #33485E;
-  width: 77%;
-  padding-bottom: 43.6%; }
-  @media only screen and (max-width: 600px) {
-    #sections .screen {
-      width: 90%;
-      padding-bottom: 60%; } }
-#sections .base {
-  background: #D7D7D7;
-  margin: 0 auto;
-  width: 90%;
-  padding-bottom: 3%;
-  border-radius: 0 0 10px 10px;
-  position: relative; }
-  @media only screen and (max-width: 600px) {
-    #sections .base {
-      width: 100%; } }
-  #sections .base .hole {
+  #about .wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative; }
+  #about .helper {
+    width: 100%; }
+  #about .screen {
+    position: relative;
+    margin: 0 auto;
+    border-radius: 20px 20px 0 0;
+    background: #33485E;
+    width: 77%;
+    padding-bottom: 43.6%; }
+    @media only screen and (max-width: 600px) {
+      #about .screen {
+        width: 90%;
+        padding-bottom: 60%; } }
+  #about .base {
+    background: #D7D7D7;
+    margin: 0 auto;
+    width: 90%;
+    padding-bottom: 3%;
+    border-radius: 0 0 10px 10px;
+    position: relative; }
+    @media only screen and (max-width: 600px) {
+      #about .base {
+        width: 100%; } }
+    #about .base .hole {
+      position: absolute;
+      margin: auto;
+      left: 0;
+      right: 0;
+      width: 10%;
+      height: 40%;
+      background: white;
+      border-radius: 0 0 10px 10px; }
+  #about .innerScreen {
     position: absolute;
-    margin: auto;
-    left: 0;
-    right: 0;
-    width: 10%;
-    height: 40%;
-    background: white;
-    border-radius: 0 0 10px 10px; }
-#sections .innerScreen {
-  position: absolute;
-  top: 20px;
-  bottom: 20px;
-  left: 15px;
-  right: 15px;
-  background: #1AAF5C; }
-  @media only screen and (max-width: 600px) {
-    #sections .innerScreen {
-      top: 15px;
-      bottom: 15px;
-      left: 10px;
-      right: 10px; } }
-#sections .terminalWindow {
-  border-radius: 5px;
-  margin: 2% auto;
-  color: white;
-  width: 90%;
-  height: 90%;
-  background: #2A3D4F; }
-  @media only screen and (max-width: 600px) {
-    #sections .terminalWindow {
-      height: 92%; } }
-  #sections .terminalWindow .icons {
-    border-radius: 5px 5px 0 0;
-    width: 100%;
-    height: 5%;
-    background: #D7D7D7; }
-  #sections .terminalWindow .threeIcn {
-    margin-top: 0.5%;
-    float: left;
-    width: 2%;
-    border-radius: 50%;
-    height: 62.5%;
-    margin-left: 10px; }
-  #sections .terminalWindow .commands {
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    padding: 2%; }
+    top: 20px;
+    bottom: 20px;
+    left: 15px;
+    right: 15px;
+    background: #1AAF5C; }
+    @media only screen and (max-width: 600px) {
+      #about .innerScreen {
+        top: 15px;
+        bottom: 15px;
+        left: 10px;
+        right: 10px; } }
+  #about .terminalWindow {
+    border-radius: 5px;
+    margin: 2% auto;
+    color: white;
+    width: 90%;
+    height: 90%;
+    background: #2A3D4F; }
+    @media only screen and (max-width: 600px) {
+      #about .terminalWindow {
+        height: 92%; } }
+    #about .terminalWindow .icons {
+      border-radius: 5px 5px 0 0;
+      width: 100%;
+      height: 5%;
+      background: #D7D7D7; }
+    #about .terminalWindow .threeIcn {
+      margin-top: 0.5%;
+      float: left;
+      width: 2%;
+      border-radius: 50%;
+      height: 62.5%;
+      margin-left: 10px; }
+    #about .terminalWindow .commands {
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+      padding: 2%; }

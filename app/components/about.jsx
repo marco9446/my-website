@@ -4,7 +4,7 @@ var About = React.createClass({
 
   render: function() {
     return (
-      <section className='container'>
+      <section  id='about'>
         <div className='wrapper'>
           <div className='helper'>
             <div className='screen'>

@@ -1,3 +1,9 @@
+$header-background: #4C5364;
+$about-background: #C26868;
+$portfolio-background: yellow;
+$contacts-background: lightblue;
+
+
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 @mixin media($break: 600px) {
   @media only screen and (max-width: $break){

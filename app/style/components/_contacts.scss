@@ -1,0 +1,56 @@
+#contacts{
+  box-sizing: border-box;
+  background: $contacts-background;
+  padding: 10px;
+
+  .wrapper{
+    margin: auto;
+    max-width: 700px;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  .links-Container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap:wrap;
+  }
+
+  .contacts-link{
+    margin-bottom: 15px;
+    text-decoration: none;
+    display: block;
+    width: 96px;
+    height: 96px;
+    font-size: 0;
+    overflow: hidden;
+    position: relative;
+    >img{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  .google{
+    background: #D34836;
+
+  }
+
+  .git{
+    background: #333333;
+    >.gitImg{
+      fill: #94d31b;
+    }
+  }
+
+  .gmail{
+    background: #EE802F;
+  }
+  .linkedin{
+    background: #2C6183;
+  }
+
+}

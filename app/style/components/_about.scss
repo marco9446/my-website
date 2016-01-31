@@ -1,11 +1,9 @@
-#sections{
+#about{
+  box-sizing: border-box;
+  padding: 40px 10px;
+  width: 100%;
+  background: $about-background;
 
-  .container{
-    box-sizing: border-box;
-    padding: 30px 10px;
-    width: 100%;
-    background: #C26868;
-  }
 
   .wrapper{
     max-width: 900px;
