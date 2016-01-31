@@ -1,7 +1,17 @@
 [
   {
     "title": "cose",
-    "image": "http://www.placehold.it/800x600",
+    "image": "https://d13yacurqjgara.cloudfront.net/users/389291/screenshots/1582851/dribbl.png",
+    "description" : "bella descrizione"
+  },
+  {
+    "title": "cose",
+    "image": "http://orig14.deviantart.net/8a56/f/2014/241/5/9/freebie___app_screens_mock_up_by_graphberry-d7x6dvl.png",
+    "description" : "bella descrizione"
+  },
+  {
+    "title": "cose",
+    "image": "https://d13yacurqjgara.cloudfront.net/users/327999/screenshots/1806948/dribble.png",
     "description" : "bella descrizione"
   }
 ]

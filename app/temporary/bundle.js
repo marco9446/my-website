@@ -49,7 +49,7 @@
 	var React = __webpack_require__(1),
 	    ReactDOM = __webpack_require__(158),
 	    Sections = __webpack_require__(159),
-	    Header = __webpack_require__(164);
+	    Header = __webpack_require__(165);
 
 	var header = React.createElement(Header, null);
 	var sections = React.createElement(Sections, null);
@@ -19802,7 +19802,17 @@
 	module.exports = [
 		{
 			"title": "cose",
-			"image": "http://www.placehold.it/800x600",
+			"image": "https://d13yacurqjgara.cloudfront.net/users/389291/screenshots/1582851/dribbl.png",
+			"description": "bella descrizione"
+		},
+		{
+			"title": "cose",
+			"image": "http://orig14.deviantart.net/8a56/f/2014/241/5/9/freebie___app_screens_mock_up_by_graphberry-d7x6dvl.png",
+			"description": "bella descrizione"
+		},
+		{
+			"title": "cose",
+			"image": "https://d13yacurqjgara.cloudfront.net/users/327999/screenshots/1806948/dribble.png",
 			"description": "bella descrizione"
 		}
 	];
@@ -19813,7 +19823,8 @@
 
 	'use strict';
 
-	var React = __webpack_require__(1);
+	var React = __webpack_require__(1),
+	    Terminal = __webpack_require__(164);
 
 	var About = React.createClass({
 	  displayName: 'About',
@@ -19825,6 +19836,11 @@
 	      React.createElement(
 	        'div',
 	        { className: 'wrapper' },
+	        React.createElement(
+	          'h1',
+	          null,
+	          'ABOUT'
+	        ),
 	        React.createElement(
 	          'div',
 	          { className: 'helper' },
@@ -19844,7 +19860,7 @@
 	                  React.createElement('div', { className: 'threeIcn yellow' }),
 	                  React.createElement('div', { className: 'threeIcn green' })
 	                ),
-	                React.createElement('div', { className: 'commands' })
+	                React.createElement(Terminal, null)
 	              )
 	            )
 	          ),
@@ -19868,8 +19884,113 @@
 
 	'use strict';
 
+	var React = __webpack_require__(1);
+
+	var Termianl = React.createClass({
+	  displayName: 'Termianl',
+
+	  getInitialState: function getInitialState() {
+	    return {
+	      placeholder: "i'm interactive, try to type some basic unix commands",
+	      position: '~',
+	      history: [{ command: 'Marco.profession', result: 'students in computer science and developer' }, { command: 'Marco.hobbies', result: "[ 'MTB', 'experiment new technologies', 'music' ]" }]
+	    };
+	  },
+
+	  _parceInput: function _parceInput(e) {
+	    if (e.key === 'Enter') {
+	      var value = e.target.value.split(' ');
+	      for (var i = value.length; i--;) {
+	        if (value[i] === '') {
+	          value.splice(i, 1);
+	        }
+	      }
+	      this._executeCommand(value);
+	      e.target.value = '';
+	    }
+	  },
+
+	  _executeCommand: function _executeCommand(command) {
+	    var entireCom = command.length > 1 ? command[0] + ' ' + command[1] : command[0];
+	    switch (command[0]) {
+	      case 'cd':
+	        this.setState({ position: command[1] });
+	        break;
+	      case undefined:
+	        break;
+	      default:
+	        this._addCommand(entireCom, 'command not found');
+	    }
+	  },
+
+	  _addCommand: function _addCommand(comm, res) {
+	    var arr = this.state.history;
+	    arr.push({ command: comm, result: res });
+	    this.setState({ history: arr });
+	  },
+
+	  _writeCommand: function _writeCommand() {
+	    var commands = [];
+	    var commandsHystory = this.state.history;
+	    for (var i = 0; i < commandsHystory.length; i++) {
+	      commands.push(React.createElement(
+	        'div',
+	        { className: 'commandContainer', key: i },
+	        React.createElement(
+	          'div',
+	          { className: '.title' },
+	          '> ',
+	          commandsHystory[i].command
+	        ),
+	        React.createElement(
+	          'div',
+	          { className: 'result' },
+	          '=> ',
+	          commandsHystory[i].result
+	        )
+	      ));
+	    }
+	    return commands;
+	  },
+	  componentDidUpdate: function componentDidUpdate() {
+	    var element = document.getElementById("history");
+	    element.scrollTop = element.scrollHeight;
+	  },
+
+	  render: function render() {
+	    var commands = this._writeCommand();
+
+	    return React.createElement(
+	      'div',
+	      { className: 'commands' },
+	      React.createElement(
+	        'div',
+	        { className: 'history', id: 'history' },
+	        commands
+	      ),
+	      React.createElement(
+	        'div',
+	        { className: 'input-container' },
+	        this.state.position,
+	        React.createElement('input', { type: 'text', id: '',
+	          onKeyPress: this._parceInput,
+	          placeholder: this.state.placeholder })
+	      )
+	    );
+	  }
+
+	});
+
+	module.exports = Termianl;
+
+/***/ },
+/* 165 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
 	var React = __webpack_require__(1),
-	    classNames = __webpack_require__(165);
+	    classNames = __webpack_require__(166);
 
 	var Header = React.createClass({
 	  displayName: 'Header',
@@ -19955,7 +20076,7 @@
 	module.exports = Header;
 
 /***/ },
-/* 165 */
+/* 166 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!

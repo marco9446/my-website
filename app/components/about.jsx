@@ -1,4 +1,5 @@
-var React = require('react');
+var React = require('react'),
+  Terminal = require('./terminal.jsx');
 
 var About = React.createClass({
 
@@ -6,6 +7,7 @@ var About = React.createClass({
     return (
       <section  id='about'>
         <div className='wrapper'>
+          <h1>ABOUT</h1>
           <div className='helper'>
             <div className='screen'>
               <div className='innerScreen'>
@@ -16,9 +18,9 @@ var About = React.createClass({
                     <div className='threeIcn yellow'></div>
                     <div className='threeIcn green'></div>
                   </div>
-                  <div className='commands'>
-                    {/* i comandi andranno qui */}
-                  </div>
+
+                  <Terminal></Terminal>
+
 
                 </div>
 

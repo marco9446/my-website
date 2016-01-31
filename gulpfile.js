@@ -63,6 +63,7 @@ gulp.task('serve', ['react','sass'], function() {
   });
   gulp.watch("app/style/**/*.scss", ['sass']);
   gulp.watch("app/components/**/*.jsx", ['react']);
+  gulp.watch("app/projects.json", ['react']);
   gulp.watch("app/*.html").on('change', browserSync.reload);
 });
 

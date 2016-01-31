@@ -478,7 +478,8 @@ body {
   background: yellow; }
   #portfolio .wrapper {
     margin: auto;
-    text-align: center; }
+    text-align: center;
+    max-width: 1130px; }
   #portfolio .projects {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -572,13 +573,14 @@ body {
 
 #about {
   box-sizing: border-box;
-  padding: 40px 10px;
+  padding: 20px 10px 40px 10px;
   width: 100%;
   background: #C26868; }
   #about .wrapper {
     max-width: 900px;
     margin: 0 auto;
-    position: relative; }
+    position: relative;
+    text-align: center; }
   #about .helper {
     width: 100%; }
   #about .screen {
@@ -630,7 +632,8 @@ body {
     color: white;
     width: 90%;
     height: 90%;
-    background: #2A3D4F; }
+    background: #2A3D4F;
+    /* style for terminal  */ }
     @media only screen and (max-width: 600px) {
       #about .terminalWindow {
         height: 92%; } }
@@ -647,7 +650,55 @@ body {
       height: 62.5%;
       margin-left: 10px; }
     #about .terminalWindow .commands {
+      text-align: left;
       box-sizing: border-box;
       width: 100%;
-      height: 100%;
-      padding: 2%; }
+      height: 96%;
+      padding: 2%;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+      align-items: stretch;
+      font: normal 14px/normal "Lucida Console", Monaco, monospace;
+      font-size: 0.9em; }
+      #about .terminalWindow .commands ::-webkit-scrollbar {
+        background: transparent;
+        /* optional: just make scrollbar invisible */ }
+      @media only screen and (max-width: 600px) {
+        #about .terminalWindow .commands {
+          font-size: 0.6em; } }
+      #about .terminalWindow .commands .history {
+        -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        overflow: auto;
+        max-height: 100%; }
+      #about .terminalWindow .commands .input-container {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex; }
+      #about .terminalWindow .commands input {
+        -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        display: block;
+        border: 0 solid #b7b7b7;
+        padding-top: 3px;
+        padding-left: 10px;
+        color: white;
+        text-overflow: clip;
+        background: transparent;
+        outline: none; }
+      #about .terminalWindow .commands .commandContainer {
+        box-sizing: border-box;
+        padding-bottom: 5px; }
+        #about .terminalWindow .commands .commandContainer .title {
+          color: white; }
+        #about .terminalWindow .commands .commandContainer .result {
+          padding: 2px 0 0 20px;
+          color: rgba(147, 161, 161, 0.8); }
