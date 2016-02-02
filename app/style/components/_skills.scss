@@ -25,7 +25,7 @@
 
   .CircularProgress-Fg {
       transition: stroke-dashoffset .5s ease-in-out;
-      stroke: #F08B65;
+      stroke: $highlight-color;
   }
 
   .CircularProgress-Text {

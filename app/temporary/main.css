@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Set default font family to sans-serif.
@@ -569,6 +570,31 @@ body {
       #portfolio .projects .project img {
         width: 340px;
         height: 190px; }
+
+.dialog {
+  text-align: center; }
+  .dialog .close-thik {
+    cursor: pointer;
+    color: #777;
+    font: 14px/100% arial, sans-serif;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #fff; }
+  .dialog .close-thik:hover {
+    color: #F08B65; }
+  .dialog .close-thik:after {
+    float: right;
+    font-size: 3em;
+    content: '✖';
+    /* UTF-8 symbol */
+    clear: both; }
+  .dialog img {
+    max-width: 100%;
+    max-height: 300px; }
+  .dialog p {
+    padding: 0 30px;
+    text-align: justify;
+    font-size: 1.2em;
+    line-height: 1.2em; }
 
 #contacts {
   box-sizing: border-box;

@@ -81,11 +81,13 @@ gulp.task('clean:dist', function () {
     'dist/**/*'
     // to exclude a file use !.   ex '!dist/example.js'
   ]);
+  cb(err);
 });
 
 // distribution behaviour
-gulp.task('dist', ['clean:dist','sass','react','imageOptim'], function(){
+gulp.task('dist', ['clean:dist'], function(){
   // uglify css
+  gulp.start('sass','react','imageOptim');
   gulp.src('app/temporary/main.css')
   .pipe(uglifycss({
      "max-line-len": 80
