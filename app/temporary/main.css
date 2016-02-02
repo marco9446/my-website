@@ -355,7 +355,8 @@ th {
   padding: 0; }
 
 body {
-  font-family: 'Roboto', sans-serif; }
+  font-family: 'Roboto', sans-serif;
+  margin-top: 60px; }
 
 #header {
   position: fixed;
@@ -365,9 +366,9 @@ body {
   z-index: 20; }
 
 #sections {
-  margin-top: 60px;
   position: relative;
-  z-index: 0; }
+  z-index: 0;
+  color: #4d4d4d; }
 
 .red {
   background: #C23824; }
@@ -384,7 +385,7 @@ body {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  background: #4C5364;
+  background: #558C89;
   box-sizing: border-box;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
@@ -439,7 +440,7 @@ body {
     padding: 1em;
     color: white; }
   #header .links li:hover {
-    background: #484e5e; }
+    background: #518683; }
 #header .toggle {
   display: none;
   width: 40px;
@@ -473,9 +474,55 @@ body {
   #header .is-closed {
     display: none; } }
 
+.circular {
+  margin: 10px;
+  width: 100px; }
+  .circular .skillText {
+    padding-top: 10px;
+    font-size: 1em;
+    color: #222;
+    text-transform: uppercase;
+    letter-spacing: 0.1em; }
+
+.CircularProgress {
+  display: block; }
+  .CircularProgress .CircularProgress-Bg,
+  .CircularProgress .CircularProgress-Fg {
+    fill: none; }
+  .CircularProgress .CircularProgress-Bg {
+    stroke: #CCCCCC; }
+  .CircularProgress .CircularProgress-Fg {
+    transition: stroke-dashoffset .5s ease-in-out;
+    stroke: #F08B65; }
+  .CircularProgress .CircularProgress-Text {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1.8em;
+    fill: black;
+    -webkit-transform: translate(0 50%);
+    -ms-transform: translate(0 50%);
+    transform: translate(0 50%); }
+
+#skills {
+  background: #ECECEA;
+  padding: 10px 10px 60px 10px; }
+  #skills .wrapper {
+    max-width: 1000px;
+    margin: auto;
+    text-align: center; }
+    #skills .wrapper .circContainer {
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+      justify-content: space-around;
+      -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+
 #portfolio {
   padding: 10px 10px 30px 10px;
-  background: yellow; }
+  background: #74AFAD; }
   #portfolio .wrapper {
     margin: auto;
     text-align: center;
@@ -502,7 +549,7 @@ body {
         position: absolute;
         width: 100%;
         height: calc(100% - 4px);
-        background: #F33446;
+        background: #F08B65;
         opacity: 0;
         transition: opacity 300ms ease-in-out;
         display: -webkit-flex;
@@ -525,7 +572,7 @@ body {
 
 #contacts {
   box-sizing: border-box;
-  background: lightblue;
+  background: #74AFAD;
   padding: 10px; }
   #contacts .wrapper {
     margin: auto;
@@ -575,7 +622,7 @@ body {
   box-sizing: border-box;
   padding: 20px 10px 40px 10px;
   width: 100%;
-  background: #C26868; }
+  background: #ECECEA; }
   #about .wrapper {
     max-width: 900px;
     margin: 0 auto;
@@ -595,7 +642,7 @@ body {
         width: 90%;
         padding-bottom: 60%; } }
   #about .base {
-    background: #D7D7D7;
+    background: #CCC;
     margin: 0 auto;
     width: 90%;
     padding-bottom: 3%;

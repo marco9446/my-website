@@ -49,7 +49,7 @@
 	var React = __webpack_require__(1),
 	    ReactDOM = __webpack_require__(158),
 	    Sections = __webpack_require__(159),
-	    Header = __webpack_require__(165);
+	    Header = __webpack_require__(167);
 
 	var header = React.createElement(Header, null);
 	var sections = React.createElement(Sections, null);
@@ -19661,10 +19661,13 @@
 	var React = __webpack_require__(1),
 	    Contacts = __webpack_require__(160),
 	    Portfolio = __webpack_require__(161),
-	    About = __webpack_require__(163);
+	    Skills = __webpack_require__(163),
+	    About = __webpack_require__(165);
 
 	var sectionEntry = React.createClass({
 	  displayName: 'sectionEntry',
+
+	  scrollIntoView: function scrollIntoView(ref) {},
 
 	  render: function render() {
 	    return React.createElement(
@@ -19672,6 +19675,7 @@
 	      null,
 	      React.createElement(About, null),
 	      React.createElement(Portfolio, null),
+	      React.createElement(Skills, null),
 	      React.createElement(Contacts, null)
 	    );
 	  }
@@ -19824,7 +19828,116 @@
 	'use strict';
 
 	var React = __webpack_require__(1),
-	    Terminal = __webpack_require__(164);
+	    CircBar = __webpack_require__(164);
+
+	var Skills = React.createClass({
+	  displayName: 'Skills',
+
+	  render: function render() {
+	    return React.createElement(
+	      'section',
+	      { id: 'skills' },
+	      React.createElement(
+	        'div',
+	        { className: 'wrapper' },
+	        React.createElement(
+	          'h1',
+	          null,
+	          'SKILLS'
+	        ),
+	        React.createElement(
+	          'div',
+	          { className: 'circContainer' },
+	          React.createElement(CircBar, { strokeWidth: '5', percentage: '90', text: 'Javacript' }),
+	          React.createElement(CircBar, { strokeWidth: '5', percentage: '80', text: 'Java' }),
+	          React.createElement(CircBar, { strokeWidth: '5', percentage: '70', text: 'Python' }),
+	          React.createElement(CircBar, { strokeWidth: '5', percentage: '40', text: 'Android' }),
+	          React.createElement(CircBar, { strokeWidth: '5', percentage: '40', text: 'C' }),
+	          React.createElement(CircBar, { strokeWidth: '5', percentage: '40', text: 'C++' })
+	        )
+	      )
+	    );
+	  }
+
+	});
+
+	module.exports = Skills;
+
+/***/ },
+/* 164 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+
+	var Circular = React.createClass({
+	    displayName: 'Circular',
+
+	    render: function render() {
+	        var defRadious = 50;
+	        var radius = defRadious - this.props.strokeWidth / 2;
+	        var width = defRadious * 2;
+	        var height = defRadious * 2;
+	        var viewBox = '0 0 ' + width + ' ' + height;
+	        var dashArray = radius * Math.PI * 2;
+	        var dashOffset = dashArray - dashArray * this.props.percentage / 100;
+
+	        return React.createElement(
+	            'div',
+	            { className: 'circular' },
+	            React.createElement(
+	                'svg',
+	                {
+	                    className: 'CircularProgress',
+	                    viewBox: viewBox },
+	                React.createElement('circle', {
+	                    className: 'CircularProgress-Bg',
+	                    cx: defRadious,
+	                    cy: defRadious,
+	                    r: radius,
+	                    strokeWidth: this.props.strokeWidth + 'px' }),
+	                React.createElement('circle', {
+	                    className: 'CircularProgress-Fg',
+	                    cx: defRadious,
+	                    cy: defRadious,
+	                    r: radius,
+	                    strokeWidth: this.props.strokeWidth + 'px',
+	                    style: {
+	                        strokeDasharray: dashArray,
+	                        strokeDashoffset: dashOffset
+	                    } }),
+	                React.createElement(
+	                    'text',
+	                    {
+	                        className: 'CircularProgress-Text',
+	                        x: defRadious,
+	                        y: defRadious,
+	                        dy: '.4em',
+	                        textAnchor: 'middle' },
+	                    this.props.percentage + '%'
+	                )
+	            ),
+	            React.createElement(
+	                'div',
+	                { className: 'skillText' },
+	                this.props.text
+	            )
+	        );
+	    }
+
+	});
+
+	module.exports = Circular;
+
+/***/ },
+/* 165 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1),
+	    Terminal = __webpack_require__(166);
 
 	var About = React.createClass({
 	  displayName: 'About',
@@ -19879,7 +19992,7 @@
 	module.exports = About;
 
 /***/ },
-/* 164 */
+/* 166 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -19891,9 +20004,9 @@
 
 	  getInitialState: function getInitialState() {
 	    return {
-	      placeholder: "i'm interactive, try to type some basic unix commands",
+	      placeholder: "Hello world",
 	      position: '~',
-	      history: [{ command: 'Marco.profession', result: 'students in computer science and developer' }, { command: 'Marco.hobbies', result: "[ 'MTB', 'experiment new technologies', 'music' ]" }]
+	      history: [{ command: 'Marco.profession', result: 'student in computer science and developer' }, { command: 'Marco.hobbies', result: "[ 'MTB', 'experiment new technologies', 'music' ]" }]
 	    };
 	  },
 
@@ -19984,13 +20097,13 @@
 	module.exports = Termianl;
 
 /***/ },
-/* 165 */
+/* 167 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var React = __webpack_require__(1),
-	    classNames = __webpack_require__(166);
+	    classNames = __webpack_require__(168);
 
 	var Header = React.createClass({
 	  displayName: 'Header',
@@ -20005,6 +20118,10 @@
 	      this.setState({ open: true });
 	    }
 	  },
+	  scroll: function scroll() {
+	    this.props.scrollIntoView(React.findDOMNode(this));
+	  },
+
 	  render: function render() {
 	    var linksClass = 'links';
 	    var containerClass = 'container';
@@ -20026,7 +20143,7 @@
 	          null,
 	          React.createElement(
 	            'a',
-	            { href: '#about' },
+	            { href: '#', onClick: this.scroll },
 	            'About'
 	          )
 	        ),
@@ -20076,7 +20193,7 @@
 	module.exports = Header;
 
 /***/ },
-/* 166 */
+/* 168 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!

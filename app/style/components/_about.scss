@@ -3,7 +3,7 @@
   padding: 20px 10px 40px 10px;
   width: 100%;
   background: $about-background;
-
+  
 
   .wrapper{
     max-width: 900px;
@@ -28,7 +28,7 @@
   }
 
   .base{
-    background: #D7D7D7;
+    background: #CCC;
     margin: 0 auto;
     width: 90%;
     padding-bottom: 3%;
@@ -53,7 +53,7 @@
     bottom: 20px;
     left: 15px;
     right: 15px;
-    background: #1AAF5C;
+    background: $computer-background;
     @include media {
       top: 15px;
       bottom: 15px;

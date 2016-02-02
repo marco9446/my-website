@@ -1,7 +1,9 @@
-$header-background: #4C5364;
-$about-background: #C26868;
-$portfolio-background: yellow;
-$contacts-background: lightblue;
+$header-background: #558C89;
+$computer-background: #1AAF5C;
+$about-background:#ECECEA ;
+$portfolio-background: #74AFAD;
+$skills-background: #ECECEA;
+$contacts-background: #74AFAD;
 
 
 @import url(https://fonts.googleapis.com/css?family=Roboto);
@@ -13,6 +15,7 @@ $contacts-background: lightblue;
 
 body{
   font-family: 'Roboto', sans-serif;
+  margin-top: 60px;
 }
 
 #header{
@@ -24,9 +27,9 @@ body{
 }
 
 #sections{
-  margin-top: 60px;
   position: relative;
   z-index: 0;
+  color: lighten(black, 30);
 }
 
 .red{

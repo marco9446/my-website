@@ -13,6 +13,12 @@ var Header = React.createClass({
       this.setState({open: true});
     }
   },
+  scroll: function(){
+    this.props.scrollIntoView(React.findDOMNode(this));
+
+
+  },
+
   render: function() {
     var linksClass = 'links';
     var containerClass = 'container';
@@ -28,7 +34,7 @@ var Header = React.createClass({
       <div className={containerClass}>
 
         <ul className={linksClass} onClick={this.toggle}>
-          <li><a href='#about'>About</a></li>
+          <li><a href='#' onClick={this.scroll}>About</a></li>
           <li><a href='#portfolio'>Portfolio</a></li>
           <li><a href='#skills'>Skills</a></li>
           <li><a href='#contacts'>Contacts</a></li>

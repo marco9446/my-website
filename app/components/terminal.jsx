@@ -3,10 +3,10 @@ var React = require('react');
 var Termianl = React.createClass({
   getInitialState: function(){
     return {
-      placeholder:"i'm interactive, try to type some basic unix commands",
+      placeholder:"Hello world",
       position:'~',
       history: [
-        {command: 'Marco.profession', result:'students in computer science and developer'},
+        {command: 'Marco.profession', result:'student in computer science and developer'},
         {command: 'Marco.hobbies', result:"[ 'MTB', 'experiment new technologies', 'music' ]"}
       ]
     }

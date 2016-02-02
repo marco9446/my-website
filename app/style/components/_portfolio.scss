@@ -26,7 +26,7 @@
         position: absolute;
         width: 100%;
         height: calc(100% - 4px);
-        background: #F33446;
+        background: #F08B65;
         opacity: 0;
         transition: opacity 300ms ease-in-out;
         display: flex;
@@ -46,4 +46,7 @@
       }
     }
   }
+
+  // dialog
+
 }
