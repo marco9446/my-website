@@ -21941,7 +21941,7 @@
 	        React.createElement(
 	          'h1',
 	          null,
-	          'ABOUT'
+	          'Marco Ravazzini'
 	        ),
 	        React.createElement(
 	          'div',
@@ -22113,17 +22113,15 @@
 
 	  render: function render() {
 	    var linksClass = 'links';
-	    var containerClass = 'container';
-	    var containerClass = 'container';
 	    if (this.state.open) {
-	      linksClass, containerClass += ' is-open';
+	      linksClass += ' is-open';
 	    } else {
 	      linksClass += ' is-closed';
 	    }
 
 	    return React.createElement(
 	      'div',
-	      { className: containerClass },
+	      { className: 'container' },
 	      React.createElement(
 	        'ul',
 	        { className: linksClass, onClick: this.toggle },
@@ -22165,8 +22163,8 @@
 	        )
 	      ),
 	      React.createElement(
-	        'div',
-	        { className: 'logo' },
+	        'h1',
+	        { className: 'logo ' },
 	        'MR'
 	      ),
 	      React.createElement(

@@ -7,7 +7,7 @@ var About = React.createClass({
     return (
       <section  id='about'>
         <div className='wrapper'>
-          <h1>ABOUT</h1>
+          <h1>Marco Ravazzini</h1>
           <div className='helper'>
             <div className='screen'>
               <div className='innerScreen'>

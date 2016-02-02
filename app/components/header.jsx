@@ -21,17 +21,15 @@ var Header = React.createClass({
 
   render: function() {
     var linksClass = 'links';
-    var containerClass = 'container';
-    var containerClass = 'container';
     if (this.state.open) {
-      linksClass,containerClass += ' is-open';
+      linksClass += ' is-open';
     }
     else {
       linksClass += ' is-closed'
     }
 
     return (
-      <div className={containerClass}>
+      <div className='container'>
 
         <ul className={linksClass} onClick={this.toggle}>
           <li><a href='#' onClick={this.scroll}>About</a></li>
@@ -39,7 +37,9 @@ var Header = React.createClass({
           <li><a href='#skills'>Skills</a></li>
           <li><a href='#contacts'>Contacts</a></li>
         </ul>
-        <div className='logo'>MR</div>
+        <h1  className='logo '>MR</h1>
+
+
         <div className='toggle' onClick={this.toggle}>
           <span></span>
         </div>
