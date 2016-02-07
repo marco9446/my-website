@@ -1,8 +1,8 @@
 [
   {
-    "title": "cose",
-    "image": "https://d13yacurqjgara.cloudfront.net/users/389291/screenshots/1582851/dribbl.png",
-    "description" : "bella descrizione"
+    "title": "WePass",
+    "image": "../images/wePass.jpg",
+    "description" : "We Pass was the first Android application that i developed. It consisted in a game created for the final project of the Software Atélier II course. My role consisted in the creation of some parts of the GUI, such as the main page, and the integration with NFC and QR-Code technologies"
   },
   {
     "title": "cose",
