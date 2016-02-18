@@ -2,16 +2,20 @@
   {
     "title": "WePass",
     "image": "../images/wePass.jpg",
-    "description" : "We Pass was the first Android application that i developed. It consisted in a game created for the final project of the Software Atélier II course. My role consisted in the creation of some parts of the GUI, such as the main page, and the integration with NFC and QR-Code technologies"
+    "description" : "We Pass was the first Android application that i developed. It consisted in a game created for the final project of the Software Atélier II course. My role consisted in the creation of some parts of the GUI, such as the main page, and the integration with NFC and QR-Code technologies",
+    "technologies" : ["java for android"]
   },
   {
-    "title": "cose",
-    "image": "http://orig14.deviantart.net/8a56/f/2014/241/5/9/freebie___app_screens_mock_up_by_graphberry-d7x6dvl.png",
-    "description" : "bella descrizione"
+    "title": "RavaSong",
+    "image": "../images/ravasong.jpg",
+    "description" : "RavaSong has been my first responsive web-site. It is a web player interface for online songs and it has been developed compleatly on vanilla html, javascript and css",
+    "technologies": ["html", "javascript", "css"],
+    "demo": "http://atelier.inf.usi.ch/~ravazm/"
   },
   {
-    "title": "cose",
-    "image": "https://d13yacurqjgara.cloudfront.net/users/327999/screenshots/1806948/dribble.png",
-    "description" : "bella descrizione"
+    "title": "Usi Student Life",
+    "image": "../images/UsiStudentLife.jpg",
+    "description" : "UsiStudentLife has been a project developed in order to facilitate the most important informations for Usi's students. My role consisted in finding and parsing file, such as the data related to number of available bikes in the bike sharing station in Lugano",
+    "technologies": ["python", "tkInter"]
   }
 ]

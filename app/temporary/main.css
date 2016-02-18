@@ -652,30 +652,77 @@ body {
         width: 340px;
         height: 190px; }
 
-.dialog {
+.dialog .center {
   text-align: center; }
-  .dialog .close-thik {
-    cursor: pointer;
-    color: #777;
-    font: 14px/100% arial, sans-serif;
-    text-decoration: none;
-    text-shadow: 0 1px 0 #fff; }
-  .dialog .close-thik:hover {
-    color: #F08B65; }
-  .dialog .close-thik:after {
-    float: right;
-    font-size: 3em;
-    content: '✖';
-    /* UTF-8 symbol */
-    clear: both; }
-  .dialog img {
-    max-width: 100%;
-    max-height: 300px; }
-  .dialog p {
-    padding: 0 30px;
-    text-align: justify;
-    font-size: 1.2em;
-    line-height: 1.2em; }
+.dialog .close-thik {
+  cursor: pointer;
+  color: #777;
+  font: 14px/100% arial, sans-serif;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #fff; }
+.dialog .close-thik:hover {
+  color: #F08B65; }
+.dialog .close-thik:after {
+  float: right;
+  font-size: 3em;
+  content: '✖';
+  /* UTF-8 symbol */
+  clear: both; }
+.dialog img {
+  max-width: 100%;
+  max-height: 300px; }
+.dialog p {
+  text-justify: inter-word;
+  color: rgba(0, 0, 0, 0.8);
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 15px;
+  line-height: 22px; }
+.dialog .tags {
+  text-align: left;
+  list-style: none;
+  margin: 0;
+  overflow: hidden;
+  padding: 0; }
+.dialog .tags li {
+  float: left; }
+.dialog .tag {
+  background: #eee;
+  border-radius: 3px 0 0 3px;
+  color: #999;
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 20px 0 23px;
+  position: relative;
+  margin: 0 10px 10px 0;
+  text-decoration: none;
+  -webkit-transition: color 0.2s; }
+.dialog .tag::before {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+  content: '';
+  height: 6px;
+  left: 10px;
+  position: absolute;
+  width: 6px;
+  top: 10px; }
+.dialog .tag::after {
+  background: #fff;
+  border-bottom: 13px solid transparent;
+  border-left: 10px solid #eee;
+  border-top: 13px solid transparent;
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0; }
+.dialog .tag:hover {
+  background-color: #F08B65;
+  color: white; }
+.dialog .tag:hover::after {
+  border-left-color: #F08B65; }
+.dialog .repo a {
+  margin: 5px; }
 
 #contacts {
   box-sizing: border-box;

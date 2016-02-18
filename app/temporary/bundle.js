@@ -19815,6 +19815,34 @@
 	        )
 	      ));
 	    }
+
+	    var tec = this.state.actualPr.technologies;
+	    var listTec = [];
+	    if (tec) {
+	      for (var j = 0; j < tec.length; j++) {
+	        listTec.push(React.createElement(
+	          'li',
+	          null,
+	          React.createElement(
+	            'span',
+	            { className: 'tag' },
+	            tec[j]
+	          )
+	        ));
+	      }
+	    }
+
+	    var demo = this.state.actualPr.demo ? React.createElement(
+	      'a',
+	      { href: this.state.actualPr.demo },
+	      'Demo'
+	    ) : '';
+	    var repo = this.state.actualPr.repo ? React.createElement(
+	      'a',
+	      { href: this.state.actualPr.repo },
+	      'Repo'
+	    ) : '';
+
 	    return React.createElement(
 	      'section',
 	      { id: 'portfolio' },
@@ -19841,15 +19869,40 @@
 	          style: style },
 	        React.createElement('span', { className: 'close-thik', onClick: this.closeModal }),
 	        React.createElement(
-	          'h1',
-	          null,
-	          this.state.actualPr.title
+	          'div',
+	          { className: 'center' },
+	          React.createElement(
+	            'h1',
+	            null,
+	            this.state.actualPr.title
+	          ),
+	          React.createElement('img', { src: this.state.actualPr.image })
 	        ),
-	        React.createElement('img', { src: this.state.actualPr.image }),
+	        React.createElement(
+	          'ul',
+	          { className: 'tags' },
+	          React.createElement(
+	            'h3',
+	            null,
+	            'Technologies involved'
+	          ),
+	          listTec
+	        ),
+	        React.createElement(
+	          'h3',
+	          null,
+	          'Description'
+	        ),
 	        React.createElement(
 	          'p',
 	          null,
 	          this.state.actualPr.description
+	        ),
+	        React.createElement(
+	          'div',
+	          { className: 'repo' },
+	          demo,
+	          repo
 	        )
 	      )
 	    );
@@ -21796,17 +21849,30 @@
 		{
 			"title": "WePass",
 			"image": "../images/wePass.jpg",
-			"description": "We Pass was the first Android application that i developed. It consisted in a game created for the final project of the Software Atélier II course. My role consisted in the creation of some parts of the GUI, such as the main page, and the integration with NFC and QR-Code technologies"
+			"description": "We Pass was the first Android application that i developed. It consisted in a game created for the final project of the Software Atélier II course. My role consisted in the creation of some parts of the GUI, such as the main page, and the integration with NFC and QR-Code technologies",
+			"technologies": [
+				"java for android"
+			]
 		},
 		{
-			"title": "cose",
-			"image": "http://orig14.deviantart.net/8a56/f/2014/241/5/9/freebie___app_screens_mock_up_by_graphberry-d7x6dvl.png",
-			"description": "bella descrizione"
+			"title": "RavaSong",
+			"image": "../images/ravasong.jpg",
+			"description": "RavaSong has been my first responsive web-site. It is a web player interface for online songs and it has been developed compleatly on vanilla html, javascript and css",
+			"technologies": [
+				"html",
+				"javascript",
+				"css"
+			],
+			"demo": "http://atelier.inf.usi.ch/~ravazm/"
 		},
 		{
-			"title": "cose",
-			"image": "https://d13yacurqjgara.cloudfront.net/users/327999/screenshots/1806948/dribble.png",
-			"description": "bella descrizione"
+			"title": "Usi Student Life",
+			"image": "../images/UsiStudentLife.jpg",
+			"description": "UsiStudentLife has been a project developed in order to facilitate the most important informations for Usi's students. My role consisted in finding and parsing file, such as the data related to number of available bikes in the bike sharing station in Lugano",
+			"technologies": [
+				"python",
+				"tkInter"
+			]
 		}
 	];
 

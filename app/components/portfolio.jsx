@@ -58,6 +58,21 @@ var Portfolio = React.createClass({
         </div>
       )
     }
+
+
+    var tec = this.state.actualPr.technologies;
+    var listTec = [];
+    if (tec) {
+      for (var j = 0; j < tec.length; j++) {
+        listTec.push(
+          <li><span className="tag">{tec[j]}</span></li>
+        )
+      }
+    }
+
+    var demo = this.state.actualPr.demo? <a href={this.state.actualPr.demo}>Demo</a> : '';
+    var repo = this.state.actualPr.repo? <a href={this.state.actualPr.repo}>Repo</a> : '';
+
     return (
       <section id='portfolio'>
         <div className='wrapper'>
@@ -74,9 +89,21 @@ var Portfolio = React.createClass({
           onRequestClose={this.closeModal}
           style={style}>
           <span  className="close-thik" onClick={this.closeModal}></span>
-          <h1>{this.state.actualPr.title}</h1>
-          <img src={this.state.actualPr.image}></img>
+          <div className='center'>
+            <h1>{this.state.actualPr.title}</h1>
+            <img src={this.state.actualPr.image}></img>
+          </div>
+          <ul className="tags">
+            <h3>Technologies involved</h3>
+            {listTec}
+          </ul>
+          <h3>Description</h3>
+
           <p>{this.state.actualPr.description}</p>
+
+          <div className='repo'>
+            {demo}{repo}
+          </div>
         </Modal>
 
       </section>
