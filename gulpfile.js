@@ -78,7 +78,9 @@ gulp.task('default', ['serve'])
 // clean dist folder before distribution
 gulp.task('clean:dist', function () {
   return del([
-    'dist/**/*'
+    'dist/**/*',
+    '!dist/google32196a17ed9305b1.html',
+    '!dist/sitemap.xml'
     // to exclude a file use !.   ex '!dist/example.js'
   ]);
   cb(err);
