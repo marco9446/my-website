@@ -55,7 +55,7 @@ gulp.task('sass', function () {
 });
 
 
-// server
+// server with auto reload
 gulp.task('serve', ['react','sass'], function() {
   browserSync.init({
       server: "./app",
@@ -70,7 +70,7 @@ gulp.task('serve', ['react','sass'], function() {
 
 
 
-// default behaviour
+// default behavior
 gulp.task('default', ['serve'])
 
 
@@ -86,7 +86,7 @@ gulp.task('clean:dist', function () {
   cb(err);
 });
 
-// distribution behaviour
+// distribution behavior
 gulp.task('dist', ['clean:dist'], function(){
   // uglify css
   gulp.start('sass','react','imageOptim');
