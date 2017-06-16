@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <base href="/">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
     <title>my-website</title>
@@ -10,11 +11,7 @@
     <!-- See https://goo.gl/OOhYW5 -->
     <link rel="manifest" href="/manifest.json">
 
-    <script src="/bower_components/webcomponentsjs/webcomponents-loader.js"></script>
-
-    <link rel="import" href="/src/my-website-app/my-website-app.html">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  </head>
+  
   <style>
     html, body{
       background-color: #e3e3e3;
@@ -30,8 +27,29 @@
       --shady-lady: #9C9899;
     }
 
+    my-website-app[unresolved] {
+      display: block;
+      min-height: 101vh;
+      line-height: 68px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      color: #202020;
+      padding: 0 16px;
+      overflow: visible;
+    }
+
   </style>
+  </head>
   <body>
-    <my-website-app></my-website-app>
+    <my-website-app unresolved >
+      MARCO RAVAZZINI <br>
+      Loading...
+    </my-website-app>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" async>
+    <script src="./bower_components/webcomponentsjs/webcomponents-loader.js"></script>
+    <link rel="import" href="./src/my-website-app/my-website-app.html" async>
+
   </body>
 </html>

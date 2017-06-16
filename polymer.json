@@ -1,7 +1,30 @@
 {
+  "entrypoint": "index.html",
+  "shell": "src/my-website-app/my-website-app.html",
   "lint": {
     "rules": [
       "polymer-2"
     ]
-  }
+  },
+  "extraDependencies": [
+    "bower_components/webcomponentsjs/*"
+  ],
+  "builds": [
+    {
+      "bundle": true,
+      "js": {
+        "minify": true
+      },
+      "css": {
+        "minify": true
+      },
+      "html": {
+        "minify": true
+      }
+    }
+  ],
+  "sources": [
+    "src/**/*",
+    "assets/**/*"
+  ]
 }

@@ -86,6 +86,11 @@
           }
         };
       }
+      ready() {
+        super.ready();
+        // Custom elements polyfill safe way to indicate an element has been upgraded.
+        this.removeAttribute('unresolved');this.removeAttribute('unresolved');
+      }
     }
 
     window.customElements.define(MyWebsiteApp.is, MyWebsiteApp);
