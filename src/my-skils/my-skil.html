@@ -1,0 +1,52 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/paper-slider/paper-slider.html">
+
+<dom-module id="my-skil">
+  <template>
+    <style>
+      :host{
+        display: block;
+      }
+      .skil{
+        text-align: left;
+      }
+      .skil>span{
+        font-size: 0.8em;
+        margin-left: 15px;
+        margin-bottom: -10px;
+      }
+      paper-slider[disabled]{
+        margin-top: -5px;
+        width: 80%;
+        --paper-slider-disabled-active-color: white;
+        --paper-slider-disabled-knob-color: white;
+      }
+    </style>
+
+    <div class="skil">
+      <span>[[name]]</span>
+      <paper-slider disabled value="[[value]]"></paper-slider>
+    </div>
+
+  </template>
+  <script>
+    class MySkil extends Polymer.Element {
+      static get is() { return 'my-skil'; }
+      static get properties() {
+        return {
+          name: {
+            type: String,
+            value: ''
+          },
+          value: {
+            type: Number,
+            value: 0
+          }
+
+        };
+      }
+    }
+
+    window.customElements.define(MySkil.is, MySkil);
+  </script>
+</dom-module>

@@ -1,0 +1,104 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<dom-module id="edu-box">
+  <template>
+    <style>
+      :host{
+        display: block;
+      }
+      .column_box{
+        position: relative;
+        box-sizing: border-box;
+        background: white;
+        padding: 15px;
+        border-radius: 2px;
+        text-align: left;
+        height: 100px;
+      }
+      .column_box > h4{
+        margin: 0;
+      }
+      .column_box > span{
+        color: #add1db;
+      }
+      .arrow_right{
+        position: absolute;
+        right: -20px;
+        top: 0;
+        width: 0; 
+        height: 0; 
+        border-right: 20px solid transparent;
+        border-top: 20px solid white;
+      }
+      .arrow_left{
+        position: absolute;
+        left: -20px;
+        top: 0;
+        width: 0; 
+        height: 0; 
+        border-left: 20px solid transparent;
+        border-top: 20px solid white;
+      }
+    </style>
+
+    <div id="box" class="column_box">
+      <div id="arrow" class$="[[_boxClass]]" ></div>
+      <h4>[[title]]</h4>
+      <span>[[date]]</span>
+      <div>
+        [[description]] 
+      </div>
+
+    </div>
+
+  </template>
+  <script>
+    class EduBox extends Polymer.Element {
+      static get is() { return 'edu-box'; }
+      static get properties() {
+        return {
+          spaceTop: {
+            type: Boolean,
+            value: false,
+            observer: '_spacer'
+          },
+          isRightBox: {
+            type: Boolean,
+            value: false
+          },
+          title: {
+            type: String,
+            value: "title"
+          },
+          description: {
+            type: String,
+            value: ''
+          },
+          date: {
+            type: String,
+            value: "... - ..."
+          },
+          _boxClass: {
+            type: String,
+            computed: '_classChooser(isRightBox)'
+          }
+        };
+      }
+
+      _spacer(space){
+        if (space){
+          this.$.box.style.marginTop = '90px';
+        }
+      }
+
+      _classChooser(isRight){
+        if (isRight){
+          return 'arrow_left';
+        }
+        return 'arrow_right';
+      }
+    }
+
+    window.customElements.define(EduBox.is, EduBox);
+  </script>
+</dom-module>

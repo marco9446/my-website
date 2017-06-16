@@ -1,0 +1,75 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../../bower_components/iron-icon/iron-icon.html">
+
+
+<link rel="import" href="../my-iconset/my-iconset.html">
+<link rel="import" type="" href="./my-skil.html">
+
+<dom-module id="my-skils">
+  <template>
+    <style is="custom-style">
+      :host{
+        display: block;
+      }
+      .container{
+        text-align: left;
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        color: white;
+        background-color: var(--dodger-blue);
+        @apply --layout-horizontal;
+
+      }
+      .container>div{
+        @apply --layout-flex;
+      }
+      .personal_skils, .professionals_skils{
+        padding-left: 40px;
+      }
+      iron-icon{
+        --iron-icon-fill-color: white;
+        color: white;
+      }
+      li{
+        margin: 20px 0;
+      }
+      
+    </style>
+
+    <div class="container">
+      <div class="professionals_skils">
+        <h3><iron-icon icon="my-svg-icons:paste"></iron-icon> Professional skils</h3>
+        <my-skil name="Java" value="85"></my-skil>
+        <my-skil name="Python" value="75"></my-skil>
+        <my-skil name="HTML, CSS, Javascript" value="90"></my-skil>
+        <my-skil name="C, C++" value="50"></my-skil>
+
+
+      </div>
+      <div class="personal_skils">
+        <h3><iron-icon icon="my-svg-icons:paste"></iron-icon> Hobbies</h3>
+        <ul>
+          <li><iron-icon icon="my-svg-icons:walk"></iron-icon> Hiking</li>
+          <li><iron-icon icon="my-svg-icons:mountain"></iron-icon> Mountain sports</li>
+          <li><iron-icon icon="my-svg-icons:bike"></iron-icon> Biking</li>
+          <li><iron-icon icon="my-svg-icons:screwdriver"></iron-icon> DIY projects</li>
+        </ul>
+
+      </div>
+    </div>
+
+
+  </template>
+  <script>
+    class MySkils extends Polymer.Element {
+      static get is() { return 'my-skils'; }
+      static get properties() {
+        return {};
+      }
+    }
+
+    window.customElements.define(MySkils.is, MySkils);
+  </script>
+</dom-module>

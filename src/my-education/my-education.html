@@ -1,0 +1,84 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
+
+
+<link rel="import" href="./edu-box.html">
+
+<dom-module id="my-education">
+  <template>
+    <style is="custom-style">
+      :host{
+        display: block;
+      }
+      .container{
+        @apply (--layout-horizontal);
+      }
+      .center_column{
+        position: relative;
+        margin-top: -5px;
+        width: 100px;
+      }
+      .left_column, .right_column{
+        @apply (--layout-flex)
+      }
+      .time_line{
+        margin: auto;
+        width: 1px;
+        height: 210px;
+        background: var(--shady-lady);
+      }
+      .time_line_dot{
+        left: 0;
+        right: 0;
+        margin: auto;
+        display: block;
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: var(--dodger-blue);
+        border-radius: 50%;
+      }
+
+     
+
+    </style>
+
+    <div class="container"> 
+      <section class="left_column">
+        <edu-box 
+          date="2009 - 2013"
+          title="Istituto Statale Istruzione Superiore, Bisuschio, Italia"
+          description="Scientific high school diploma">
+        </edu-box>
+        <edu-box space-top date="2016 - present" title="ETH, Zurich, Switzerland" description="Master in Computer Science"></edu-box>
+
+      </section>
+      <section class="center_column">
+        <div class="time_line">
+          <span class="time_line_dot"></span>
+          <span class="time_line_dot" style="top: 90px;"></span>
+          <span class="time_line_dot" style="top: 190px;"></span>
+        </div>
+      </section>
+      <section class="right_column">
+        <edu-box 
+          is-right-box space-top 
+          description="Bachelor in Computer Science"
+          date="2013 - 2016" 
+          title="Università della Svizzera italiana (USI), Lugano, Switzerland" >
+        </edu-box>
+      </section>
+    </div>
+
+  </template>
+  <script>
+    class MyEducation extends Polymer.Element {
+      static get is() { return 'my-education'; }
+      static get properties() {
+        return {};
+      }
+    }
+
+    window.customElements.define(MyEducation.is, MyEducation);
+  </script>
+</dom-module>

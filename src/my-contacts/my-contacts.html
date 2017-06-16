@@ -1,0 +1,57 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+
+
+<link rel="import" href="../my-iconset/my-iconset.html">
+
+<dom-module id="my-contacts">
+  <template>
+    <style is="custom-style">
+      :host{
+        display: block;
+      }
+
+      #container{
+        @apply (--layout-horizontal);
+        @apply --layout-justified;
+      }
+    
+      .contact{
+        --paper-icon-button:{
+          --iron-icon-fill-color: white;
+          background: var(--dodger-blue);
+          width: 100px;
+          height: 100px;
+        }
+      }
+    </style>
+
+    <div id="container">
+      <a class="contact" href="https://plus.google.com/+marcoravazzini" tabindex="-1">
+        <paper-icon-button icon="my-svg-icons:google+"></paper-icon-button>
+      </a>
+      <a class="contact" href="mailto:marco9446@gmail.com" tabindex="-1">
+        <paper-icon-button icon="my-svg-icons:mail"></paper-icon-button>
+      </a>
+      <a class="contact" href="https://github.com/marco9446" tabindex="-1">
+        <paper-icon-button icon="my-svg-icons:github"></paper-icon-button>
+      </a>
+      <a class="contact" href="https://www.linkedin.com/in/marco-ravazzini-996b7a113?trk=nav_responsive_tab_profile" tabindex="-1">
+        <paper-icon-button icon="my-svg-icons:linkedin"></paper-icon-button>
+      </a>
+    </div>
+
+  </template>
+  <script>
+    class MyContacts extends Polymer.Element {
+      static get is() { return 'my-contacts'; }
+      static get properties() {
+        return {};
+      }
+    }
+
+    window.customElements.define(MyContacts.is, MyContacts);
+  </script>
+</dom-module>

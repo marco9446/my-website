@@ -1,0 +1,57 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+
+<dom-module id="my-about">
+  <template>
+    <style>
+      :host {
+        margin-top: 100px;
+        width: 100%;
+        display: block;
+      }
+      #card{
+        width: 100%;
+        position:relative;
+        --paper-card: {
+          padding: 70px 20px 20px 20px;
+        };
+      }
+      paper-button.indigo {
+        margin-top: 10px;
+        background: var(--paper-light-green-500);
+        color: white;
+      }
+      .img-circle {
+        position: absolute;
+        top: -61px;
+        left: 50%;
+        margin-left: -61px;
+        border-radius: 50%;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+      }
+    </style>
+
+    <paper-card elevation="1" id="card">
+      <h1>Marco ravazzini</h1>
+      <img class="img-circle" src="../../assets/images/me.jpg" width="122px">
+      <p> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+      <br>
+      <paper-button  class="indigo"> ciao</paper-button>
+
+    </paper-card>
+
+
+  </template>
+  <script>
+
+    class MyAbout extends Polymer.Element {
+      static get is() { return 'my-about'; }
+      static get properties() {
+          return {};
+      }
+    }
+
+    window.customElements.define(MyAbout.is, MyAbout);
+  </script>
+</dom-module>
