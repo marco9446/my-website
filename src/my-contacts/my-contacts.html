@@ -10,12 +10,13 @@
   <template>
     <style is="custom-style">
       :host{
-        display: block;
+        display: inline-block;
+        width: 100%;
       }
 
       #container{
         @apply (--layout-horizontal);
-        @apply --layout-justified;
+        @apply (--layout-justified);
       }
     
       .contact{
@@ -26,6 +27,18 @@
           height: 100px;
         }
       }
+
+      @media (max-width: 420px) {
+        .contact{
+          --paper-icon-button:{
+             --iron-icon-fill-color: white;
+            background: var(--dodger-blue);
+            width: 80px;
+            height: 80px;
+          }
+        }
+      }
+
     </style>
 
     <div id="container">

@@ -13,7 +13,7 @@
         padding: 15px;
         border-radius: 2px;
         text-align: left;
-        height: 100px;
+        min-height: 100px;
       }
       .column_box > h4{
         margin: 0;
@@ -39,9 +39,35 @@
         border-left: 20px solid transparent;
         border-top: 20px solid white;
       }
+      .right{
+        right: -55px;
+      }
+      .left{
+        left: -55px;
+      }
+      .time_line_dot{
+        display: block;
+        position: absolute;
+        top: -5px;
+        width: 10px;
+        height: 10px;
+        background-color: var(--dodger-blue);
+        border-radius: 50%;
+      }
+      @media (max-width: 520px) {
+        .right{
+          right: -35px;
+        }
+        .left{
+          left: -35px;
+        }
+
+      }
     </style>
 
     <div id="box" class="column_box">
+      <span id="dot" class="time_line_dot"></span>
+
       <div id="arrow" class$="[[_boxClass]]" ></div>
       <h4>[[title]]</h4>
       <span>[[date]]</span>
@@ -93,8 +119,10 @@
 
       _classChooser(isRight){
         if (isRight){
+          this.$.dot.className += ' left';
           return 'arrow_left';
         }
+        this.$.dot.className += ' right';
         return 'arrow_right';
       }
     }
