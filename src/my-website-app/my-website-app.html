@@ -35,12 +35,21 @@
         color: #fff;
       }
 
+      footer{
+        text-align: center;
+        margin: 10px 0;
+        opacity: 0.3;
+      }
+      footer>a{
+        color: var(--dodger-blue);
+      }
+
     </style>
 
     <app-header-layout>
       <app-header slot="header" shadow>
         <app-toolbar>
-          <div main-title>App name</div>
+          <div main-title>Personal Website</div>
         </app-toolbar>
       </app-header>
       <div id="main_container">
@@ -67,6 +76,12 @@
         </section>
       </div>
     </app-header-layout>
+    <footer>
+      Website written in <a href="https://www.polymer-project.org/">Polymer 2.0</a>, 
+      Icons: <a href="https://materialdesignicons.com/">materialdesignicons</a>, 
+      Template inspiration: <a href="https://material.uplabs.com/posts/material-design-personal-cv">MaterialUp</a>,
+      Website repo: <a href="https://github.com/marco9446/my-website">github</a>
+    </footer>
 
 
 
