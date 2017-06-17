@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <base href="/">
+    <!--<base href="/">-->
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
     <title>Marco Ravazzini</title>
@@ -48,9 +48,30 @@
       MARCO RAVAZZINI <br>
       Loading...
     </my-website-app>
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" async>
     <script src="./bower_components/webcomponentsjs/webcomponents-loader.js"></script>
     <link rel="import" href="./src/my-website-app/my-website-app.html" async>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+      WebFont.load({
+        google: {
+          families: ['Roboto', 'sans-serif']
+        }
+      });
+
+    </script>
+    <script>
+      (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+      ga('create', 'UA-73940237-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
 
   </body>
 </html>

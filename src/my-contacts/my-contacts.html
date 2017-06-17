@@ -21,21 +21,25 @@
     
       .contact{
         --paper-icon-button:{
-          --iron-icon-fill-color: white;
-          background: var(--dodger-blue);
+          --iron-icon-fill-color: var(--dodger-blue);
+          background: white;
           width: 100px;
           height: 100px;
+        }
+        --paper-icon-button-hover	:{
+          --iron-icon-fill-color: var(--aqua-squeeze);
         }
       }
 
       @media (max-width: 420px) {
         .contact{
           --paper-icon-button:{
-             --iron-icon-fill-color: white;
-            background: var(--dodger-blue);
+          --iron-icon-fill-color: var(--dodger-blue);
+            background: white;
             width: 80px;
             height: 80px;
           }
+          
         }
       }
 

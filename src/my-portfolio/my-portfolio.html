@@ -1,0 +1,126 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
+
+
+<!--<link rel="import" href="./project-dialog.html">-->
+
+<dom-module id="my-portfolio">
+  <template>
+    <style is="custom-style">
+      :host{
+        display: block;
+      }
+      .container{
+        @apply --layout-horizontal;
+        @apply --layout-center-justified;
+        @apply --layout-wrap;
+      }
+      paper-card{
+        margin-bottom: 10px; 
+        color: white;
+        --paper-card-background-color: var(--dodger-blue);
+        --paper-card-header-image-text:{
+          background:rgba(255, 255, 255, 0.8);
+          font-weight: bold;
+          border-radius: 0 10px 0 0 ;
+          color: var(--dodger-blue);
+        };
+        --paper-card-header:{
+          width: 260px;
+        }
+      }
+      #spacer{
+        margin: 0 10px 10px 10px;
+      }
+    </style>
+    <project-dialog id="dialog" project="[[_selectedProject]]" ></project-dialog>
+
+    <div class="container">
+      <paper-card heading="Ravasong" image="../../assets/images/ravasong.jpg">
+        <div class="card-actions">
+          <paper-button on-tap="_selectProject" data="ravasong">More info</paper-button>
+        </div>
+      </paper-card>
+
+      <paper-card id="spacer" heading="Usi Student Life" image="../../assets/images/UsiStudentLife.jpg">
+        <div class="card-actions">
+          <paper-button on-tap="_selectProject" data="usistudentlife">More info</paper-button>
+        </div>
+      </paper-card>
+
+      <paper-card heading="WePass" image="../../assets/images/wePass.jpg">
+        <div class="card-actions">
+          <paper-button on-tap="_selectProject" data="wepass">More info</paper-button>
+        </div>
+      </paper-card>
+
+
+    </div>
+
+  </template>
+  <script>
+    class MyPortfolio extends Polymer.Element {
+      static get is() { return 'my-portfolio'; }
+      static get properties() {
+        return {
+          projects: {
+            type: Object,
+              value: () => {
+                return {
+                  "wepass": {
+                    "title": "WePass",
+                    "image": "../../assets/images/wePass.jpg",
+                    "description": "We Pass was the first Android application that i developed. It consisted in a game created for the final project of the Software Atélier II course. My role consisted in the creation of some parts of the GUI, such as the main page, and the integration with NFC and QR-Code technologies",
+                    "technologies": [
+                      "java for android"
+                    ]
+                  },
+                  "ravasong": {
+                    "title": "RavaSong",
+                    "image": "../../assets/images/ravasong.jpg",
+                    "description": "RavaSong has been my first responsive web-site. It is a web player interface for online songs and it has been developed compleatly on vanilla html, javascript and css",
+                    "technologies": [
+                      "html",
+                      "javascript",
+                      "css"
+                    ],
+                    "demo": "http://atelier.inf.usi.ch/~ravazm/"
+                  },
+                  "usistudentlife":{
+                    "title": "Usi Student Life",
+                    "image": "../../assets/images/UsiStudentLife.jpg",
+                    "description": "UsiStudentLife has been a project developed in order to facilitate the most important informations for Usi's students. My role consisted in finding and parsing file, such as the data related to number of available bikes in the bike sharing station in Lugano",
+                    "technologies": [
+                      "python",
+                      "tkInter"
+                    ]
+                  }
+                }
+              }
+          },
+          _selectedProject:{
+            type: Object,
+            value: () => {}
+          }
+        };
+      }
+
+      _selectProject(event){
+        this._selectedProject = this.projects[event.target.getAttribute('data')]
+        Polymer.importHref(Polymer.ResolveUrl.resolveUrl('project-dialog.html', window.location.href + 'src/my-portfolio/'), 
+          ()=>{
+            this.$.dialog.openDialog();
+          }, 
+          (error)=>{
+            console.error(error);
+          },
+          true
+        )
+      }
+      
+    }
+
+    window.customElements.define(MyPortfolio.is, MyPortfolio);
+  </script>
+</dom-module>

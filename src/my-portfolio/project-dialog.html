@@ -1,0 +1,83 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/paper-dialog/paper-dialog.html">
+<link rel="import" href="../../bower_components/iron-image/iron-image.html">
+
+<dom-module id="project-dialog">
+  <template>
+    <style>
+      :host{
+        display: block;
+      }
+      paper-dialog{
+        --iron-image-width:100%;
+        --paper-dialog:{
+          max-width: 800px;
+        }
+        
+      }
+      .image_container{
+        margin: auto;
+        width: 60%;
+      }
+      iron-image{
+        --iron-image:{
+          text-align: center;
+          margin: auto;
+        }
+        
+      }
+      .tec span{
+        color: white;
+        padding: 10px;
+        background: var(--dodger-blue);
+        border-radius: 50px;
+      }
+
+      @media (max-width: 500px) {
+        .image_container{
+          width: 80%;
+        }
+      }
+
+    </style>
+
+    <paper-dialog id="dialog" >
+      <h2>[[project.title]]</h2>
+      <div class="image_container">
+        <iron-image src="[[project.image]]"></iron-image>
+      </div>
+      <div class="tec">
+        <template is="dom-repeat" items="{{project.technologies}}">
+          <span>[[item]]</span>
+        </template>
+      </div>
+   
+      <p>
+         [[project.description]]
+      </p>
+      <div class="buttons">
+        <paper-button dialog-dismiss>Close</paper-button>
+      </div>
+    </paper-dialog>
+
+  </template>
+  <script>
+    class ProjectDialog extends Polymer.Element {
+      static get is() { return 'project-dialog'; }
+      static get properties() {
+        return {
+          project: {
+            type: Object
+          }
+          
+        };
+      }
+
+      openDialog(){
+        this.$.dialog.open();
+      }
+    }
+
+    window.customElements.define(ProjectDialog.is, ProjectDialog);
+  </script>
+</dom-module>

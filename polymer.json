@@ -23,6 +23,9 @@
       }
     }
   ],
+  "fragments": [
+    "src/my-portfolio/project-dialog.html"
+  ],
   "sources": [
     "src/**/*",
     "assets/**/*"
